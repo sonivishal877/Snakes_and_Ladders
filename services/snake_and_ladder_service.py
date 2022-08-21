@@ -1,11 +1,9 @@
 from snakesladders.models.board import Board
 from snakesladders.services.diceservice import DiceService
 class SnakeAndLadderService:
-	#default board size 100 if not provided
 	def __init__(self,size=100):
 		self.board = Board(size)
-		#board has following : snakeList[],ladderList[],playersCurrentPositions{}
-
+		
 	def setPlayers(self,players):		
 		self.playerQueue = []		
 		self.initialNumberOfPlayers = len(players)
@@ -59,7 +57,7 @@ class SnakeAndLadderService:
 		return self.board.getPlayersCurrentPositions().get(player.getId()) == self.board.getSize()
 
 	def isGameCompleted(self):
-		# we pop player after he win from playerQueue		
+				
 		return self.initialNumberOfPlayers > len(self.playerQueue)
 
 	def startGame(self):		

@@ -9,9 +9,7 @@ class SnakeAndLadderService:
 		self.initialNumberOfPlayers = len(players)
 		playerPositions = {}
 		for player in players:
-			#fifo queue of players
 			self.playerQueue.append(player)
-			#initially all players at 0
 			playerPositions[player.getId()] = 0
 		
 		self.board.playersCurrentPositions = playerPositions
